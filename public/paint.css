@@ -1,0 +1,136 @@
+body{
+    color:#8ecae6 ;
+    font-family:'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    background-color: #caf0f8;
+}
+header{
+    background-color:#023047;
+    padding: 20px;
+    height: 150px;
+    background-image: url("./onlinelogomake1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+h4{
+    text-decoration-color:#FAA275;
+    text-size-adjust: 12px;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+#id1{
+    background-color: beige;
+}
+
+
+section{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: #caf0f8;
+   color: #457b9d;
+}
+
+
+
+
+
+#picture{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #457b9d;
+    background-color: #a8dadc;
+    width: 100px;
+    height: 100px;
+}
+
+#foto{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #457b9d;
+    background-color: #a8dadc;
+    width: 250px;
+    height: 190px;
+    background-image: url("./ruddertwo.png");
+    background-repeat: no-repeat;
+}
+
+#photo{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #457b9d;
+    background-color: #a8dadc;
+    width: 100px;
+    height: 100px;
+}
+#pic{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #457b9d;
+    background-color: #a8dadc;
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
+
+
+#firstDiv{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #457b9d;
+    background-color: #a8dadc;
+    width: 100px;
+    height: 100px;
+}
+
+#rudder{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #457b9d;
+    background-color: #a8dadc;
+    width: 100px;
+    height: 100px;
+}
+
+#throttle{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #457b9d;
+    background-color: #a8dadc;
+    width: 100px;
+    height: 100px;
+}
+#pitch{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #457b9d;
+    background-color: #a8dadc;
+    width: 100px;
+    height: 100px;
+}
+
+
+
+#myButton{
+    padding: 10px;
+}
+
+footer{
+    background-color: #457b9d;
+}

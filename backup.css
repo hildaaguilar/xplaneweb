@@ -1,0 +1,85 @@
+body{
+    color:#8ecae6 ;
+    font-family:'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    background-image: url("airport.jpg");
+}
+header{
+    background-color:#023047;
+    padding: 20px;
+    height: 400px;
+    text-align: center;
+
+}
+
+
+
+
+h4{
+    text-decoration-color:#FAA275;
+    text-size-adjust: 12px;
+    margin: auto;
+    width: 350px;
+    height: 350px;
+    text-align: center;
+}
+#id1{
+    background-color: beige;
+}
+
+
+section{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#counter{
+    background-color:#fcbf49;
+    height: 40px;
+    color: #023047;
+}
+
+#firstDiv{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #ffb703;
+    background-color: #fca311;
+    width: 350px;
+    height: 350px;
+}
+
+#rudder{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #ffb703;
+    background-color: #fca311;
+    width: 350px;
+    height: 350px;
+}
+
+#throttle{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #ffb703;
+    background-color: #fca311;
+    width: 350px;
+    height: 350px;
+}
+#pitch{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color: #ffb703;
+    background-color: #fca311;
+    width: 350px;
+    height: 350px;
+}
+
+#myButton{
+    padding: 10px;
+}
