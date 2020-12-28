@@ -131,6 +131,17 @@ section{
     padding: 10px;
 }
 
+#flightsim{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+    color:black;
+    background-color:white;
+    width: 900px;
+    height: 900px;
+
+}
+
 footer{
     background-color: #457b9d;
 }
