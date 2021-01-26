@@ -48,8 +48,11 @@ http.listen(port, function () {
 
 setInterval(sendData, 100);
 function sendData() {
+  if(dataToSend.attitude &&
+    dataToSend.attitude.roll && dataToSend.attitude.pitch && dataToSend.attitude.truehdg){
   console.log(`sending data, roll:${dataToSend.attitude.roll}  pitch:${dataToSend.attitude.pitch}  yaw:${dataToSend.attitude.truehdg}`);
   io.emit('xplaneData', dataToSend);
+  }
 }
 // ====================================================
 
