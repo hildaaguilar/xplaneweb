@@ -1,6 +1,6 @@
 // Import XPlane class from the package
-//import { XPlaneClient } from "xplane-udp"
-var XPlaneClient = require('xplane-udp');
+import { XPlaneClient } from "xplane-udp"
+//var XPlaneClient = require('xplane-udp');
 
 var expri1 = require('./final.js'); 
 var dgram = require('dgram');
@@ -16,9 +16,45 @@ const express = require('express');
 
 const app = express();
 
+// =================== socketio =====================
+var cors = require('cors');
+var app2 = require('express')();
+app2.use(cors());
+var port = 3000;
+var http = require('http').Server(app2);
+var io = require('socket.io')(http);
 
 
+io.on('connection', function(socket) {
+  socket.emit('announcements', { message: 'A new user has joined!' });
 
+
+  socket.on('event', function(data) {
+      console.log('A client sent us this dumb message:', data.message);
+  });
+
+});
+
+http.listen(port, function () {
+  var today = new Date();
+  var date = today.getFullYear() + '-' + (today.getMonth() + 1).toString().padStart(2, '0') + '-' + today.getDate().toString().padStart(2, '0');
+  var time = today.getHours().toString().padStart(2, '0') + ":" + today.getMinutes().toString().padStart(2, '0') + ":" + today.getSeconds().toString().padStart(2, '0');
+  console.log( 'Server started on ' + date + ' ' + time);
+  console.log( 'Web server listening on http://localhost:' + port);
+  console.log( 'Socket.IO server listening on http://localhost:' + port + '/socket.io/');
+  console.log( '');
+});
+
+
+setInterval(sendData, 100);
+function sendData() {
+  console.log(`sending data, roll:${dataToSend.attitude.roll}  pitch:${dataToSend.attitude.pitch}  yaw:${dataToSend.attitude.truehdg}`);
+  io.emit('xplaneData', dataToSend);
+}
+// ====================================================
+
+
+var dataToSend = {}
 
 // Create a client on a specific port (this is a value you define in your xplane game settings)
 const client2 = new XPlaneClient(49100)
@@ -28,21 +64,15 @@ client2.start()
 // Subscribe to the updated event
 // This will fire at the rate at which you send UDP updates (set in-game)
 client2.on("updated", (data) => {
-    
-    // Do something with the data
-    console.log(data)
-    callMeMaybe()
+
+  dataToSend = data;
+  if(typeof(data.attitude) != "undefined") {
+     //console.log(`roll:${data.attitude.roll}  pitch:${data.attitude.pitch}  yaw:${data.attitude.truehdg} `)
+}
 
 })
 
-// You can also access the data directly from the client instance
-callMeMaybe(() => {
-    console.log("call me maybe has been called")
-    // Access data in the following format `<client>.data.<group>.<value>`
-    console.log(client2.data.time.real)
-    console.log(client2.data.airspeed.indicated)
 
-})
 
 
 

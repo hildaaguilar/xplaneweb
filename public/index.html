@@ -4,6 +4,30 @@
     <meta charset="utf-8">
     <title>X-Plane Controls</title>
     <link rel="stylesheet" type="text/css" href="./paint.css">
+
+    <!-- <script src='/socket.io/socket.io.js'></script> -->
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io("http://localhost:3000");
+
+      
+
+      socket.on('xplaneData', function(data) {
+          //console.log(`Got announcement:, roll:${data.attitude.roll}  pitch:${data.attitude.pitch}  yaw:${data.attitude.truehdg}`);
+          var rollBox = document.getElementById("rollInfo");
+          var pitchBox = document.getElementById("pitchInfo");
+          var headingBox = document.getElementById("yawInfo");
+
+          rollBox.innerHTML = data.attitude.roll; 
+          pitchBox.innerHTML = data.attitude.pitch; 
+          headingBox.innerHTML = data.attitude.truehdg;
+      });
+
+
+
+
+
+    </script>
   </head>
   <body>
     <header> </header>
@@ -61,10 +85,23 @@
         </div>
       </div>
 
+
   
     </section>
 
+    <section>
+      <div>
+        <label>Roll
+          <textarea  id='rollInfo' rows="2"></textarea>
+        </label>
 
+        <label>Pitch</label>
+        <textarea  id='pitchInfo' rows="2" ></textarea>
+
+        <label>True Heading</label>
+        <textarea  id='yawInfo' rows="2"></textarea>
+      </div>
+    </section>
 
   </body>
 
@@ -74,6 +111,9 @@
 
 
   <script src="client.js"></script>
+
+
+
 </html>
 
 
