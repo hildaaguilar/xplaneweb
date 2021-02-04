@@ -67,7 +67,16 @@ client2.start()
 // Subscribe to the updated event
 // This will fire at the rate at which you send UDP updates (set in-game)
 client2.on("updated", (data) => {
+  for (var a in data) {
 
+    console.log("key: " + a  + "  value:" +  data[a])
+
+    for (var b in data[a]) {
+
+      console.log("key: " + b  + "  value: " + data[a][b])
+
+    }  
+  } 
   dataToSend = data;
   if(typeof(data.attitude) != "undefined") {
      //console.log(`roll:${data.attitude.roll}  pitch:${data.attitude.pitch}  yaw:${data.attitude.truehdg} `)

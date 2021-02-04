@@ -17,10 +17,16 @@
           var rollBox = document.getElementById("rollInfo");
           var pitchBox = document.getElementById("pitchInfo");
           var headingBox = document.getElementById("yawInfo");
+          var altitudeBox = document.getElementById("altitudeInfo");
+          var latBox = document.getElementById("latitudeInfo");
+          var lonBox = document.getElementById("longitudeInfo");
 
           rollBox.innerHTML = data.attitude.roll; 
           pitchBox.innerHTML = data.attitude.pitch; 
           headingBox.innerHTML = data.attitude.truehdg;
+          altitudeBox.innerHTML = data.globalposition.altagl;
+          latBox.innerHTML = data.globalposition.lat;
+          lonBox.innerHTML = data.globalposition.lon;
       });
 
 
@@ -100,6 +106,15 @@
 
         <label>True Heading</label>
         <textarea  id='yawInfo' rows="2"></textarea>
+ 
+        <label>altitude</label>
+        <textarea  id='altitudeInfo' rows="2"></textarea>
+
+        <label>latitude</label>
+        <textarea  id='latitudeInfo' rows="2"></textarea>
+
+        <label>longitude</label>
+        <textarea  id='longitudeInfo' rows="2"></textarea>
       </div>
     </section>
 
