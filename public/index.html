@@ -20,6 +20,8 @@
           var altitudeBox = document.getElementById("altitudeInfo");
           var latBox = document.getElementById("latitudeInfo");
           var lonBox = document.getElementById("longitudeInfo");
+          var speedBox = document.getElementById("airspeedInfo");
+          var throttlecommandBox = document.getElementById("throttleInfo");
 
           rollBox.innerHTML = data.attitude.roll; 
           pitchBox.innerHTML = data.attitude.pitch; 
@@ -27,6 +29,8 @@
           altitudeBox.innerHTML = data.globalposition.altagl;
           latBox.innerHTML = data.globalposition.lat;
           lonBox.innerHTML = data.globalposition.lon;
+          speedBox.innerHTML = data.airspeed.mph;
+          throttlecommandBox.innerHTML = data.throttlecommand.one;
       });
 
 
@@ -53,9 +57,11 @@
         </div>
 
       </div>
+
+
+
+
     </section>
-
-
       <div id="box">
         <div id="picture">
           
@@ -70,6 +76,9 @@
           
         </div>
       </div>
+
+
+
 
 
       <div id="boxtwo">
@@ -92,31 +101,56 @@
       </div>
 
 
+      <div id="boxThree">
+
+        <div id="rollBox">
+          <label>Roll
+            <textarea  id='rollInfo' rows="2"></textarea>
+          </label>
+        </div>
+
+        <div id="pitchBox">
+          <label>Pitch</label>
+          <textarea  id='pitchInfo' rows="2" ></textarea>  
+        </div>
+
+        <div id="headingBox">
+          <label>True Heading</label>
+          <textarea  id='yawInfo' rows="2"></textarea>  
+        </div>
+
+        <div id="altitudeBox">
+          <label>altitude</label>
+          <textarea  id='altitudeInfo' rows="2"></textarea>  
+        </div>
+
+        <div id="latitudeBox">
+          <label>latitude</label>
+          <textarea  id='latitudeInfo' rows="2"></textarea>  
+        </div>
+
+        <div id="longitudeBox">
+          <label>longitude</label>
+          <textarea  id='longitudeInfo' rows="2"></textarea>
+        </div>
+
+        <div id="airspeedBox">
+          <label>speed</label>
+          <textarea  id='airspeedInfo' rows="2"></textarea>
+        </div>
+
+        <div id="throttleBox">
+          <label>throttle</label>
+          <textarea  id='throttleInfo' rows="2"></textarea>
+        </div>
+
+      </div>
+
+
   
     </section>
 
-    <section>
-      <div>
-        <label>Roll
-          <textarea  id='rollInfo' rows="2"></textarea>
-        </label>
 
-        <label>Pitch</label>
-        <textarea  id='pitchInfo' rows="2" ></textarea>
-
-        <label>True Heading</label>
-        <textarea  id='yawInfo' rows="2"></textarea>
- 
-        <label>altitude</label>
-        <textarea  id='altitudeInfo' rows="2"></textarea>
-
-        <label>latitude</label>
-        <textarea  id='latitudeInfo' rows="2"></textarea>
-
-        <label>longitude</label>
-        <textarea  id='longitudeInfo' rows="2"></textarea>
-      </div>
-    </section>
 
   </body>
 

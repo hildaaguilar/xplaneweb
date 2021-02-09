@@ -310,6 +310,88 @@ section{
     box-shadow: 6px 5px 2px #264653
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+#boxThree{
+    background-color:#264653;
+    margin: 20px;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height: 200px;
+    
+}
+#rollBox{
+    position: relative;
+    top: 10px;
+    left: 43px;
+}
+
+#pitchBox{
+    position: relative;
+    top: -31px;
+    left: 310px;
+}
+
+#headingBox{
+    position: relative;
+    top: -72.5px;
+    left: 590px;
+}
+
+#altitudeBox{
+    position: relative;
+    top: -60px;
+    left: 5px;
+}
+
+#latitudeBox{
+    position: relative;
+    top: -101px;
+    left: 282px;
+}
+
+#longitudeBox{
+    position: relative;
+    top: -142px;
+    left: 618px;
+}
+
+#airspeedBox{
+    position: relative;
+    top: -125px;
+    left: 32px;
+}
+
+#throttleBox{
+    position: relative;
+    top: -166.5px;
+    left: 282px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 footer{
     background-color: #457b9d;
 
