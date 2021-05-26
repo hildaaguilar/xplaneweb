@@ -22,6 +22,7 @@
           var lonBox = document.getElementById("longitudeInfo");
           var speedBox = document.getElementById("airspeedInfo");
           var throttlecommandBox = document.getElementById("throttleInfo");
+          var throttleactualBox = document.getElementById("actualInfo");
 
           rollBox.innerHTML = data.attitude.roll; 
           pitchBox.innerHTML = data.attitude.pitch; 
@@ -31,6 +32,7 @@
           lonBox.innerHTML = data.globalposition.lon;
           speedBox.innerHTML = data.airspeed.mph;
           throttlecommandBox.innerHTML = data.throttlecommand.one;
+          throttleactualBox.innerHTML = data.throttlecommand.one;
       });
 
 
@@ -43,25 +45,7 @@
     <header> </header>
 
 
-    <section>
-      <div class="frames" style="max-width: 1500px;">
-        <div class="frame-center" style="margin: 0 -5px;">
 
-          <div class="box-test" id="frame-one" >
-          </div>
-          <div class="box-test" id="frame-two" >
-          </div>
-          <div class="box-test" id="frame-three" >
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-
-    </section>
       <div id="box">
         <div id="picture">
           
@@ -92,6 +76,7 @@
         <div id="throttle">
           <button id="throttleUp">throttle up!</button>
           <button id="throttleDown">throttle down!</button>
+          <button id="throttleUpTwo">throttle up faster!</button>
         </div>
         <div id="pitch">
           <button id="pitchTakeoff">pitch takeoff!</button>
@@ -142,6 +127,11 @@
         <div id="throttleBox">
           <label>throttle</label>
           <textarea  id='throttleInfo' rows="2"></textarea>
+        </div>
+        
+        <div id="actualBox">
+          <label>throttle actual</label>
+          <textarea  id='actualInfo' rows="2"></textarea>
         </div>
 
       </div>

@@ -74,6 +74,15 @@ client2.on("updated", (data) => {
     for (var b in data[a]) {
 
       console.log("key: " + b  + "  value: " + data[a][b])
+      if (b == "1") {
+        console.log("key is " + b + " value: " + data[a][b])
+        data[a]["one"] = data[a][b]
+      }
+      else if (b == "2") {
+        console.log("key is " + b + " value: " + data[a][b])
+        data[a]["two"] = data[a][b]
+      }
+
 
     }  
   } 
@@ -83,6 +92,9 @@ client2.on("updated", (data) => {
 }
 
 })
+
+
+
 
 
 
@@ -121,8 +133,24 @@ app.post('/clicked', (req, res) => {
 
 
 
+  app.post('/presstwo', (req, res) => {
+    console.log('you pressed throttle up')
+
+    for (var i = 0; i < 5; i++){
+      var xplaneMsg = expri1.TestByteArray("sim/engines/throttle_up");
+      var message = new Buffer(xplaneMsg);
+      client.send(message, 0, message.length, PORT, HOST, function(err, bytes){
+      if (err) throw err;
+      console.log('UDP message sent to' + HOST + ';' + PORT);
+    });
+    res.sendStatus(200);
+    }
+    
+  });
+
   app.post('/press', (req, res) => {
     console.log('you pressed throttle up')
+    
 
     var xplaneMsg = expri1.TestByteArray("sim/engines/throttle_up");
     var message = new Buffer(xplaneMsg);
